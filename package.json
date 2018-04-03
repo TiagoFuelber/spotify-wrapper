@@ -7,6 +7,9 @@
     "clear": "rimraf lib",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
@@ -39,7 +42,8 @@
   "homepage": "https://github.com/TiagoFuelber/spotify-wrapper#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.3.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
     "eslint": "^4.0.0",
@@ -52,6 +56,8 @@
     "rimraf": "^2.6.1",
     "sinon": "^4.4.5",
     "sinon-chai": "^3.0.0",
-    "sinon-stub-promise": "^4.0.0"
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
   }
 }

@@ -2,7 +2,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 import chai, { expect } from 'chai';
-import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../src/main';
+import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../src/search';
 
 chai.use(sinonChai);
 sinonStubPromise(sinon);
@@ -73,7 +73,8 @@ describe('Search', () => {
       promise.resolves({ body: 'json' });
       const artists = search('Incubus', 'artist');
 
-      expect(artists.resolveValue).to.be.eql({ body: 'json' }); // .eql === deeply equal = o objeto é igual, inclusive as propriedades mais internas
+      // .eql === deeply equal = o objeto é igual, inclusive as propriedades mais internas
+      expect(artists.resolveValue).to.be.eql({ body: 'json' });
     });
   });
 
