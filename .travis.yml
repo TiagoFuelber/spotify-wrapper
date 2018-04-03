@@ -11,4 +11,4 @@ before_script:
 after_script:
 
 after_success:
-  - npm run test:coverage
+  - npm run coveralls
