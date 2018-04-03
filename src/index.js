@@ -1,6 +1,6 @@
 import {
   search,
-  searchArtist,
+  searchArtists,
   searchAlbums,
   searchPlaylists,
 } from './search';
@@ -13,7 +13,7 @@ import {
 
 module.exports = {
   search,
-  searchArtist,
+  searchArtists,
   searchAlbums,
   searchPlaylists,
   getAlbum,
