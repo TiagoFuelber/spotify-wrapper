@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/TiagoFuelber/spotify-wrapper.svg?branch=master)](https://travis-ci.org/TiagoFuelber/spotify-wrapper)
 
+[![Coverage Status](https://coveralls.io/repos/github/TiagoFuelber/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/TiagoFuelber/spotify-wrapper?branch=master)
+
 # Spotify Wrapper
 
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
