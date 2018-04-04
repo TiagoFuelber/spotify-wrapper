@@ -14,20 +14,20 @@
 
 <script>
   const spotify = new spotifyWrapper({
-    token: 'BQDDCcIeexZKsRbAzvPwBU8vD_cTF_WlkFfqTvfswey77S-Ey9v8CZvSDL7ieIgspKgvmdBf5hUHtbPQcyMmLKERlaGLgz7OGKbWYLpmIsdyEiySGIK41o1MWNlyiOMb9_NEBGbqRfIA'
+    token: 'BQAgmPmISdC3Co_wB-CbP8FtwXujVrzMvgYQ7iAT7TAXg1OWZ-eyFu1CPJ1Ypx6MWJIzTuruF9Q7kpUFPtPe-ztilS2VnGKp7oRkCI-gjoq72ZSGRZssKDOGt8uTu21de_nhi_SDXfF-'
   });
 
   const albums = spotify.search.albums('Incubus');
   const albumsEl = document.getElementById('albums');
 
   albums
+    .then(data => data.json())
     .then(data => {
-      console.log(data);
-      // markup = data.albums.items.map(item =>
-      //   `<img src='${item.images[0].url}' alt='${item.name}' />`
-      // ).join('');
+      markup = data.albums.items.map(item =>
+        `<img src='${item.images[0].url}' alt='${item.name}' />`
+      ).join('');
 
-      // albumsEl.innerHTML = markup;
+      albumsEl.innerHTML = markup;
     })
 
 </script>
