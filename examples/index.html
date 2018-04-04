@@ -13,16 +13,21 @@
 <script src="../dist/spotify-wrapper.umd.min.js"></script>
 
 <script>
-  const albums = spotifyWrapper.searchAlbums('Incubus');
+  const spotify = new spotifyWrapper({
+    token: 'BQDDCcIeexZKsRbAzvPwBU8vD_cTF_WlkFfqTvfswey77S-Ey9v8CZvSDL7ieIgspKgvmdBf5hUHtbPQcyMmLKERlaGLgz7OGKbWYLpmIsdyEiySGIK41o1MWNlyiOMb9_NEBGbqRfIA'
+  });
+
+  const albums = spotify.search.albums('Incubus');
   const albumsEl = document.getElementById('albums');
 
   albums
     .then(data => {
-      markup = data.albums.items.map(item =>
-        `<img src='${item.images[0].url}' alt='${item.name}' />`
-      ).join('');
+      console.log(data);
+      // markup = data.albums.items.map(item =>
+      //   `<img src='${item.images[0].url}' alt='${item.name}' />`
+      // ).join('');
 
-      albumsEl.innerHTML = markup;
+      // albumsEl.innerHTML = markup;
     })
 
 </script>
